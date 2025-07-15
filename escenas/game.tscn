@@ -1,0 +1,1435 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbxyxe2d23koj"]
+
+[ext_resource type="PackedScene" uid="uid://bum364w6ykk8k" path="res://escenas/jugador.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://bqxwypd8yab8r" path="res://escenas/pess.tscn" id="2_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://b83785i8xqw1l" path="res://imagenes/fondu.png" id="2_feb5d"]
+[ext_resource type="AudioStream" uid="uid://c23srsyx0kj63" path="res://sonido/musik.mp3" id="3_7jktm"]
+[ext_resource type="PackedScene" uid="uid://u48em5oopg1h" path="res://escenas/pesbomba.tscn" id="4_fc0e3"]
+[ext_resource type="Script" uid="uid://dih0p310xdcvp" path="res://escenas/puntos.gd" id="4_fd5rt"]
+[ext_resource type="PackedScene" uid="uid://4fvfforkc1q" path="res://escenas/pesgansta.tscn" id="6_sa5h6"]
+[ext_resource type="PackedScene" uid="uid://dvpmyvywyi5a8" path="res://escenas/pesganstaverde.tscn" id="7_3lvuv"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Jugador" parent="." instance=ExtResource("1_80nbo")]
+z_index = 1
+position = Vector2(2, 20)
+
+[node name="Camera2D" type="Camera2D" parent="Jugador"]
+position = Vector2(-8, -5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Jugador/Camera2D"]
+light_mask = 2
+visibility_layer = 2
+z_index = -1
+texture = ExtResource("2_feb5d")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Jugador/Camera2D"]
+stream = ExtResource("3_7jktm")
+volume_db = -9.225
+autoplay = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Jugador/Camera2D"]
+offset_left = 235.0
+offset_top = 281.0
+offset_right = 577.0
+offset_bottom = 323.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 27
+text = "PUNTOS GANSTA:"
+
+[node name="puntos" type="RichTextLabel" parent="Jugador/Camera2D/RichTextLabel"]
+layout_mode = 0
+offset_left = 229.0
+offset_top = -5.0
+offset_right = 336.0
+offset_bottom = 42.0
+theme_override_font_sizes/normal_font_size = 27
+
+[node name="puntos2" type="Label" parent="Jugador/Camera2D/RichTextLabel"]
+layout_mode = 0
+offset_left = 233.0
+offset_top = -1.0
+offset_right = 345.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 29
+text = "0"
+script = ExtResource("4_fd5rt")
+
+[node name="peses" type="Node" parent="."]
+
+[node name="pess" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-317, -116)
+
+[node name="pess77" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-719, 25)
+
+[node name="pess78" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-786, 140)
+
+[node name="pess79" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-673, 383)
+
+[node name="pess80" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-907, 323)
+
+[node name="pess81" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-543, -88)
+
+[node name="pess82" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-598, 155)
+
+[node name="pess83" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-706, 222)
+
+[node name="pess84" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-856, -101)
+
+[node name="pess69" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-602, -534)
+
+[node name="pess70" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-669, -419)
+
+[node name="pess71" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-556, -176)
+
+[node name="pess72" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-790, -236)
+
+[node name="pess73" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-426, -647)
+
+[node name="pess74" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-481, -404)
+
+[node name="pess75" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-589, -337)
+
+[node name="pess76" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-739, -660)
+
+[node name="pess68" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1158, -314)
+
+[node name="pess60" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(756, -173)
+
+[node name="pess61" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(689, -58)
+
+[node name="pess62" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(802, 185)
+
+[node name="pess63" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(568, 125)
+
+[node name="pess64" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(932, -286)
+
+[node name="pess65" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(877, -43)
+
+[node name="pess66" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(769, 24)
+
+[node name="pess67" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(619, -299)
+
+[node name="pess52" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(873, -732)
+
+[node name="pess53" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(806, -617)
+
+[node name="pess54" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(919, -374)
+
+[node name="pess55" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(685, -434)
+
+[node name="pess56" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1049, -845)
+
+[node name="pess57" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(994, -602)
+
+[node name="pess58" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(886, -535)
+
+[node name="pess59" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(736, -858)
+
+[node name="pess51" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1077, 66)
+
+[node name="pess43" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1479, 207)
+
+[node name="pess44" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1546, 322)
+
+[node name="pess45" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1433, 565)
+
+[node name="pess46" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1667, 505)
+
+[node name="pess47" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1303, 94)
+
+[node name="pess48" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1358, 337)
+
+[node name="pess49" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1466, 404)
+
+[node name="pess50" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1616, 81)
+
+[node name="pess35" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1362, -352)
+
+[node name="pess36" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1429, -237)
+
+[node name="pess37" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1316, 6)
+
+[node name="pess38" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1550, -54)
+
+[node name="pess39" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1186, -465)
+
+[node name="pess40" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1241, -222)
+
+[node name="pess41" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1349, -155)
+
+[node name="pess42" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1499, -478)
+
+[node name="pess34" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-92, 791)
+
+[node name="pess26" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-494, 932)
+
+[node name="pess27" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-561, 1047)
+
+[node name="pess28" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-448, 1290)
+
+[node name="pess29" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-682, 1230)
+
+[node name="pess30" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-318, 819)
+
+[node name="pess31" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-373, 1062)
+
+[node name="pess32" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-481, 1129)
+
+[node name="pess33" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-631, 806)
+
+[node name="pess18" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-377, 373)
+
+[node name="pess19" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-444, 488)
+
+[node name="pess20" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-331, 731)
+
+[node name="pess21" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-565, 671)
+
+[node name="pess22" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-201, 260)
+
+[node name="pess23" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-256, 503)
+
+[node name="pess24" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-364, 570)
+
+[node name="pess25" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-514, 247)
+
+[node name="pess2" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-384, -1)
+
+[node name="pess3" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-271, 242)
+
+[node name="pess4" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-505, 182)
+
+[node name="pess5" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-141, -229)
+
+[node name="pess6" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-196, 14)
+
+[node name="pess7" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(224, 146)
+
+[node name="pess8" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-70, 192)
+
+[node name="pess9" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(281, -93)
+
+[node name="pess10" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(120, -200)
+
+[node name="pess11" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-304, 81)
+
+[node name="pess12" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(411, 124)
+
+[node name="pess13" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(382, 234)
+
+[node name="pess14" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(71, 248)
+
+[node name="pess15" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(436, -78)
+
+[node name="pess16" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(394, -237)
+
+[node name="pess17" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-454, -242)
+
+[node name="pess85" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1106, 355)
+
+[node name="pess86" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(189, 694)
+
+[node name="pess87" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-116, 447)
+
+[node name="pess88" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1104, 130)
+
+[node name="pess89" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-129, -497)
+
+[node name="pess90" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-262, -438)
+
+[node name="pess91" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(147, -635)
+
+[node name="pess92" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-175, -689)
+
+[node name="pess93" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(381, -476)
+
+[node name="pess94" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(502, -818)
+
+[node name="pess95" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(185, -839)
+
+[node name="pess96" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(5, -831)
+
+[node name="pess97" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1291, -1245)
+
+[node name="pess98" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1693, -1104)
+
+[node name="pess99" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1760, -989)
+
+[node name="pess100" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1647, -746)
+
+[node name="pess101" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1881, -806)
+
+[node name="pess102" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1517, -1217)
+
+[node name="pess103" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1572, -974)
+
+[node name="pess104" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1680, -907)
+
+[node name="pess105" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1830, -1230)
+
+[node name="pess106" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1576, -1663)
+
+[node name="pess107" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1643, -1548)
+
+[node name="pess108" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1530, -1305)
+
+[node name="pess109" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1764, -1365)
+
+[node name="pess110" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1400, -1776)
+
+[node name="pess111" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1455, -1533)
+
+[node name="pess112" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1563, -1466)
+
+[node name="pess113" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1713, -1789)
+
+[node name="pess114" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2225, -785)
+
+[node name="pess115" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2168, -1024)
+
+[node name="pess116" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2329, -1131)
+
+[node name="pess117" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2038, -807)
+
+[node name="pess118" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2067, -697)
+
+[node name="pess119" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2378, -683)
+
+[node name="pess120" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2013, -1009)
+
+[node name="pess121" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2055, -1168)
+
+[node name="pess122" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1345, -801)
+
+[node name="pess123" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2302, -1566)
+
+[node name="pess124" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2068, -1407)
+
+[node name="pess125" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1947, -1749)
+
+[node name="pess126" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2264, -1770)
+
+[node name="pess127" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2444, -1762)
+
+[node name="pess128" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2024, 302)
+
+[node name="pess129" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2426, 443)
+
+[node name="pess130" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2493, 558)
+
+[node name="pess131" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2380, 801)
+
+[node name="pess132" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2614, 741)
+
+[node name="pess133" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2250, 330)
+
+[node name="pess134" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2305, 573)
+
+[node name="pess135" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2413, 640)
+
+[node name="pess136" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2563, 317)
+
+[node name="pess137" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2309, -116)
+
+[node name="pess138" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2376, -1)
+
+[node name="pess139" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2263, 242)
+
+[node name="pess140" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2497, 182)
+
+[node name="pess141" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2133, -229)
+
+[node name="pess142" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2188, 14)
+
+[node name="pess143" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2296, 81)
+
+[node name="pess144" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2446, -242)
+
+[node name="pess145" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2958, 762)
+
+[node name="pess146" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2901, 523)
+
+[node name="pess147" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3062, 416)
+
+[node name="pess148" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2771, 740)
+
+[node name="pess149" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2800, 850)
+
+[node name="pess150" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3111, 864)
+
+[node name="pess151" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2746, 538)
+
+[node name="pess152" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2788, 379)
+
+[node name="pess153" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2078, 746)
+
+[node name="pess154" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3035, -19)
+
+[node name="pess155" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2801, 140)
+
+[node name="pess156" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2680, -202)
+
+[node name="pess157" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2997, -223)
+
+[node name="pess158" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3177, -215)
+
+[node name="pess159" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1639, 1264)
+
+[node name="pess160" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1237, 1405)
+
+[node name="pess161" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1170, 1520)
+
+[node name="pess162" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1283, 1763)
+
+[node name="pess163" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1049, 1703)
+
+[node name="pess164" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1413, 1292)
+
+[node name="pess165" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1358, 1535)
+
+[node name="pess166" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1250, 1602)
+
+[node name="pess167" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1100, 1279)
+
+[node name="pess168" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1354, 846)
+
+[node name="pess169" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1287, 961)
+
+[node name="pess170" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1400, 1204)
+
+[node name="pess171" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1166, 1144)
+
+[node name="pess172" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1530, 733)
+
+[node name="pess173" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1475, 976)
+
+[node name="pess174" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1367, 1043)
+
+[node name="pess175" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1217, 720)
+
+[node name="pess176" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(705, 1724)
+
+[node name="pess177" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(762, 1485)
+
+[node name="pess178" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(601, 1378)
+
+[node name="pess179" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(892, 1702)
+
+[node name="pess180" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(863, 1812)
+
+[node name="pess181" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(552, 1826)
+
+[node name="pess182" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(917, 1500)
+
+[node name="pess183" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(875, 1341)
+
+[node name="pess184" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1585, 1708)
+
+[node name="pess185" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(628, 943)
+
+[node name="pess186" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(862, 1102)
+
+[node name="pess187" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(983, 760)
+
+[node name="pess188" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(666, 739)
+
+[node name="pess189" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(486, 747)
+
+[node name="pess190" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2542, -564)
+
+[node name="pess191" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2140, -423)
+
+[node name="pess192" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2073, -308)
+
+[node name="pess193" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2186, -65)
+
+[node name="pess194" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1952, -125)
+
+[node name="pess195" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2316, -536)
+
+[node name="pess196" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2261, -293)
+
+[node name="pess197" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2153, -226)
+
+[node name="pess198" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2003, -549)
+
+[node name="pess199" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2257, -982)
+
+[node name="pess200" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2190, -867)
+
+[node name="pess201" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2303, -624)
+
+[node name="pess202" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2069, -684)
+
+[node name="pess203" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2433, -1095)
+
+[node name="pess204" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2378, -852)
+
+[node name="pess205" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2270, -785)
+
+[node name="pess206" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2120, -1108)
+
+[node name="pess207" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1608, -104)
+
+[node name="pess208" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1665, -343)
+
+[node name="pess209" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1504, -450)
+
+[node name="pess210" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1795, -126)
+
+[node name="pess211" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1766, -16)
+
+[node name="pess212" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1455, -2)
+
+[node name="pess213" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1820, -328)
+
+[node name="pess214" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1778, -487)
+
+[node name="pess215" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2488, -120)
+
+[node name="pess216" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1531, -885)
+
+[node name="pess217" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1765, -726)
+
+[node name="pess218" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1886, -1068)
+
+[node name="pess219" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1569, -1089)
+
+[node name="pess220" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1389, -1081)
+
+[node name="pess221" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1037, 1463)
+
+[node name="pess222" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1439, 1604)
+
+[node name="pess223" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1506, 1719)
+
+[node name="pess224" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1393, 1962)
+
+[node name="pess225" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1627, 1902)
+
+[node name="pess226" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1263, 1491)
+
+[node name="pess227" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1318, 1734)
+
+[node name="pess228" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1426, 1801)
+
+[node name="pess229" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1576, 1478)
+
+[node name="pess230" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1322, 1045)
+
+[node name="pess231" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1389, 1160)
+
+[node name="pess232" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1276, 1403)
+
+[node name="pess233" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1510, 1343)
+
+[node name="pess234" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1146, 932)
+
+[node name="pess235" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1201, 1175)
+
+[node name="pess236" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1309, 1242)
+
+[node name="pess237" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1459, 919)
+
+[node name="pess238" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1971, 1923)
+
+[node name="pess239" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1914, 1684)
+
+[node name="pess240" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2075, 1577)
+
+[node name="pess241" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1784, 1901)
+
+[node name="pess242" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1813, 2011)
+
+[node name="pess243" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2124, 2025)
+
+[node name="pess244" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1759, 1699)
+
+[node name="pess245" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1801, 1540)
+
+[node name="pess246" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1091, 1907)
+
+[node name="pess247" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2048, 1142)
+
+[node name="pess248" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1814, 1301)
+
+[node name="pess249" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1693, 959)
+
+[node name="pess250" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2010, 938)
+
+[node name="pess251" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2190, 946)
+
+[node name="pess252" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2932, 744)
+
+[node name="pess253" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2530, 885)
+
+[node name="pess254" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2463, 1000)
+
+[node name="pess255" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2576, 1243)
+
+[node name="pess256" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2342, 1183)
+
+[node name="pess257" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2706, 772)
+
+[node name="pess258" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2651, 1015)
+
+[node name="pess259" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2543, 1082)
+
+[node name="pess260" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2393, 759)
+
+[node name="pess261" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2647, 326)
+
+[node name="pess262" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2580, 441)
+
+[node name="pess263" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2693, 684)
+
+[node name="pess264" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2459, 624)
+
+[node name="pess265" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2823, 213)
+
+[node name="pess266" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2768, 456)
+
+[node name="pess267" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2660, 523)
+
+[node name="pess268" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2510, 200)
+
+[node name="pess269" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1998, 1204)
+
+[node name="pess270" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2055, 965)
+
+[node name="pess271" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1894, 858)
+
+[node name="pess272" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2185, 1182)
+
+[node name="pess273" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2156, 1292)
+
+[node name="pess274" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1845, 1306)
+
+[node name="pess275" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2210, 980)
+
+[node name="pess276" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2168, 821)
+
+[node name="pess277" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2878, 1188)
+
+[node name="pess278" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1921, 423)
+
+[node name="pess279" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2155, 582)
+
+[node name="pess280" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2276, 240)
+
+[node name="pess281" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1959, 219)
+
+[node name="pess282" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1779, 227)
+
+[node name="pess283" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(401, 1975)
+
+[node name="pess284" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-1, 2116)
+
+[node name="pess285" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-68, 2231)
+
+[node name="pess286" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(45, 2474)
+
+[node name="pess287" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-189, 2414)
+
+[node name="pess288" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(175, 2003)
+
+[node name="pess289" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(120, 2246)
+
+[node name="pess290" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(12, 2313)
+
+[node name="pess291" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-138, 1990)
+
+[node name="pess292" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(116, 1557)
+
+[node name="pess293" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(49, 1672)
+
+[node name="pess294" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(162, 1915)
+
+[node name="pess295" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-72, 1855)
+
+[node name="pess296" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(292, 1444)
+
+[node name="pess297" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(237, 1687)
+
+[node name="pess298" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(129, 1754)
+
+[node name="pess299" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-21, 1431)
+
+[node name="pess300" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-533, 2435)
+
+[node name="pess301" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-476, 2196)
+
+[node name="pess302" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-637, 2089)
+
+[node name="pess303" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-346, 2413)
+
+[node name="pess304" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-375, 2523)
+
+[node name="pess305" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-686, 2537)
+
+[node name="pess306" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-321, 2211)
+
+[node name="pess307" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-363, 2052)
+
+[node name="pess308" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(347, 2419)
+
+[node name="pess309" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-610, 1654)
+
+[node name="pess310" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-376, 1813)
+
+[node name="pess311" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-255, 1471)
+
+[node name="pess312" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-572, 1450)
+
+[node name="pess313" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-752, 1458)
+
+[node name="pess314" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(3169, -1797)
+
+[node name="pess315" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2767, -1656)
+
+[node name="pess316" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2700, -1541)
+
+[node name="pess317" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2813, -1298)
+
+[node name="pess318" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2579, -1358)
+
+[node name="pess319" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2943, -1769)
+
+[node name="pess320" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2888, -1526)
+
+[node name="pess321" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2780, -1459)
+
+[node name="pess322" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2630, -1782)
+
+[node name="pess323" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2884, -2215)
+
+[node name="pess324" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2817, -2100)
+
+[node name="pess325" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2930, -1857)
+
+[node name="pess326" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2696, -1917)
+
+[node name="pess327" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(3060, -2328)
+
+[node name="pess328" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(3005, -2085)
+
+[node name="pess329" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2897, -2018)
+
+[node name="pess330" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2747, -2341)
+
+[node name="pess331" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2235, -1337)
+
+[node name="pess332" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2292, -1576)
+
+[node name="pess333" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2131, -1683)
+
+[node name="pess334" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2422, -1359)
+
+[node name="pess335" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2393, -1249)
+
+[node name="pess336" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2082, -1235)
+
+[node name="pess337" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2447, -1561)
+
+[node name="pess338" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2405, -1720)
+
+[node name="pess339" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(3115, -1353)
+
+[node name="pess340" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2158, -2118)
+
+[node name="pess341" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2392, -1959)
+
+[node name="pess342" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2513, -2301)
+
+[node name="pess343" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2196, -2322)
+
+[node name="pess344" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(2016, -2314)
+
+[node name="pess345" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1531, -2033)
+
+[node name="pess346" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1129, -1892)
+
+[node name="pess347" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1062, -1777)
+
+[node name="pess348" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1175, -1534)
+
+[node name="pess349" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(941, -1594)
+
+[node name="pess350" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1305, -2005)
+
+[node name="pess351" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1250, -1762)
+
+[node name="pess352" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1142, -1695)
+
+[node name="pess353" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(992, -2018)
+
+[node name="pess354" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1246, -2451)
+
+[node name="pess355" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1179, -2336)
+
+[node name="pess356" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1292, -2093)
+
+[node name="pess357" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1058, -2153)
+
+[node name="pess358" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1422, -2564)
+
+[node name="pess359" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1367, -2321)
+
+[node name="pess360" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1259, -2254)
+
+[node name="pess361" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1109, -2577)
+
+[node name="pess362" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(597, -1573)
+
+[node name="pess363" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(654, -1812)
+
+[node name="pess364" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(493, -1919)
+
+[node name="pess365" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(784, -1595)
+
+[node name="pess366" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(755, -1485)
+
+[node name="pess367" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(444, -1471)
+
+[node name="pess368" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(809, -1797)
+
+[node name="pess369" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(767, -1956)
+
+[node name="pess370" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(1477, -1589)
+
+[node name="pess371" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(520, -2354)
+
+[node name="pess372" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(754, -2195)
+
+[node name="pess373" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(875, -2537)
+
+[node name="pess374" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(558, -2558)
+
+[node name="pess375" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(378, -2550)
+
+[node name="pess376" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(268, -1827)
+
+[node name="pess377" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-134, -1686)
+
+[node name="pess378" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-201, -1571)
+
+[node name="pess379" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-88, -1328)
+
+[node name="pess380" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-322, -1388)
+
+[node name="pess381" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(42, -1799)
+
+[node name="pess382" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-13, -1556)
+
+[node name="pess383" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-121, -1489)
+
+[node name="pess384" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-271, -1812)
+
+[node name="pess385" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-17, -2245)
+
+[node name="pess386" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-84, -2130)
+
+[node name="pess387" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(29, -1887)
+
+[node name="pess388" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-205, -1947)
+
+[node name="pess389" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(159, -2358)
+
+[node name="pess390" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(104, -2115)
+
+[node name="pess391" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-4, -2048)
+
+[node name="pess392" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-154, -2371)
+
+[node name="pess393" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-666, -1367)
+
+[node name="pess394" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-609, -1606)
+
+[node name="pess395" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-770, -1713)
+
+[node name="pess396" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-479, -1389)
+
+[node name="pess397" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-508, -1279)
+
+[node name="pess398" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-819, -1265)
+
+[node name="pess399" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-454, -1591)
+
+[node name="pess400" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-496, -1750)
+
+[node name="pess401" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(214, -1383)
+
+[node name="pess402" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-743, -2148)
+
+[node name="pess403" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-509, -1989)
+
+[node name="pess404" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-388, -2331)
+
+[node name="pess405" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-705, -2352)
+
+[node name="pess406" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2685, -1180)
+
+[node name="pess407" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3087, -1039)
+
+[node name="pess408" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3154, -924)
+
+[node name="pess409" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3041, -681)
+
+[node name="pess410" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3275, -741)
+
+[node name="pess411" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2911, -1152)
+
+[node name="pess412" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2966, -909)
+
+[node name="pess413" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3074, -842)
+
+[node name="pess414" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3224, -1165)
+
+[node name="pess415" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2970, -1598)
+
+[node name="pess416" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3037, -1483)
+
+[node name="pess417" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2924, -1240)
+
+[node name="pess418" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3158, -1300)
+
+[node name="pess419" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2794, -1711)
+
+[node name="pess420" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2849, -1468)
+
+[node name="pess421" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2957, -1401)
+
+[node name="pess422" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3107, -1724)
+
+[node name="pess423" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3619, -720)
+
+[node name="pess424" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3562, -959)
+
+[node name="pess425" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3723, -1066)
+
+[node name="pess426" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3432, -742)
+
+[node name="pess427" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3461, -632)
+
+[node name="pess428" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3772, -618)
+
+[node name="pess429" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3407, -944)
+
+[node name="pess430" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3449, -1103)
+
+[node name="pess431" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-2739, -736)
+
+[node name="pess432" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3696, -1501)
+
+[node name="pess433" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3462, -1342)
+
+[node name="pess434" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3341, -1684)
+
+[node name="pess435" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3658, -1705)
+
+[node name="pess436" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(-3838, -1697)
+
+[node name="pesesbomba" type="Node" parent="."]
+
+[node name="pesbomba" parent="pesesbomba" instance=ExtResource("4_fc0e3")]
+position = Vector2(429, 553)
+
+[node name="pesbomba2" parent="pesesbomba" instance=ExtResource("4_fc0e3")]
+position = Vector2(-861, 550)
+
+[node name="pesbomba3" parent="pesesbomba" instance=ExtResource("4_fc0e3")]
+position = Vector2(-981, -124)
+
+[node name="pesbomba4" parent="pesesbomba" instance=ExtResource("4_fc0e3")]
+position = Vector2(38, -446)
+
+[node name="pesbomba5" parent="pesesbomba" instance=ExtResource("4_fc0e3")]
+position = Vector2(97, 472)
+
+[node name="pesbomba6" parent="pesesbomba" instance=ExtResource("4_fc0e3")]
+position = Vector2(682, 389)
+
+[node name="pesbomba7" parent="pesesbomba" instance=ExtResource("4_fc0e3")]
+position = Vector2(456, -601)
+
+[node name="pesbomba8" parent="pesesbomba" instance=ExtResource("4_fc0e3")]
+position = Vector2(-1152, 744)
+
+[node name="pesbomba9" parent="pesesbomba" instance=ExtResource("4_fc0e3")]
+position = Vector2(-993, -380)
+
+[node name="pesbomba10" parent="pesesbomba" instance=ExtResource("4_fc0e3")]
+position = Vector2(523, -158)
+
+[node name="pesbomba11" parent="pesesbomba" instance=ExtResource("4_fc0e3")]
+position = Vector2(1170, -250)
+
+[node name="pesbomba12" parent="pesesbomba" instance=ExtResource("4_fc0e3")]
+position = Vector2(966, 376)
+
+[node name="pesbomba13" parent="pesesbomba" instance=ExtResource("4_fc0e3")]
+position = Vector2(-1089, -764)
+
+[node name="pesesgansta" type="Node" parent="."]
+
+[node name="pesgansta" parent="pesesgansta" instance=ExtResource("6_sa5h6")]
+position = Vector2(2017, 104)
+
+[node name="pesgansta2" parent="pesesgansta" instance=ExtResource("6_sa5h6")]
+position = Vector2(-1505, 1164)
+
+[node name="pesgansta3" parent="pesesgansta" instance=ExtResource("6_sa5h6")]
+position = Vector2(-1010, -1640)
+
+[node name="pesganstaverde" parent="pesesgansta" instance=ExtResource("7_3lvuv")]
+position = Vector2(-2362, -554)
+
+[node name="pesganstaverde2" parent="pesesgansta" instance=ExtResource("7_3lvuv")]
+position = Vector2(264, 1132)
+
+[node name="pesganstaverde3" parent="pesesgansta" instance=ExtResource("7_3lvuv")]
+position = Vector2(109, -1244)
+
+[node name="pesganstaverde4" parent="pesesgansta" instance=ExtResource("7_3lvuv")]
+position = Vector2(1870, -1429)
+
+[node name="pess100" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(6522, -1635)

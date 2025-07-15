@@ -1,0 +1,126 @@
+[gd_scene load_steps=10 format=3 uid="uid://bum364w6ykk8k"]
+
+[ext_resource type="Texture2D" uid="uid://c2gasygexwqib" path="res://imagenes/jugado.png" id="1_16k11"]
+[ext_resource type="Script" uid="uid://dm6xxug180mw6" path="res://scripts/jugador.gd" id="1_omvyu"]
+[ext_resource type="Texture2D" uid="uid://dkr2mcjebrokm" path="res://imagenes/eplosion.png" id="3_8o684"]
+[ext_resource type="AudioStream" uid="uid://nrrjobeduqj0" path="res://sonido/eplosion.mp3" id="3_xutah"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_omvyu"]
+radius = 61.0082
+
+[sub_resource type="Animation" id="Animation_ukil5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("eplosion:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("eplosion:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_xutah")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_omvyu"]
+resource_name = "eplosion"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("eplosion:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.833333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("eplosion:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer/AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_xutah")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8o684"]
+_data = {
+&"RESET": SubResource("Animation_ukil5"),
+&"eplosion": SubResource("Animation_omvyu")
+}
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_xutah"]
+
+[node name="Jugador" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_omvyu")
+
+[node name="cato" type="Sprite2D" parent="."]
+position = Vector2(-8, -29)
+texture = ExtResource("1_16k11")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_omvyu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8o684")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimationPlayer"]
+stream = SubResource("AudioStreamPolyphonic_xutah")
+autoplay = true
+
+[node name="eplosion" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_8o684")

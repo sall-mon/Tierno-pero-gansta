@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://4fvfforkc1q"]
+
+[ext_resource type="Texture2D" uid="uid://dqr1tndkwvvxc" path="res://imagenes/pesgansta.png" id="1_ay6en"]
+[ext_resource type="Script" uid="uid://c6srj0oofkenm" path="res://escenas/pesgansta.gd" id="1_j7ygs"]
+[ext_resource type="Texture2D" uid="uid://c5q6rf1tao83h" path="res://imagenes/vrasogansta.png" id="2_13kq1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_13kq1"]
+radius = 60.0
+height = 286.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j7ygs"]
+radius = 535.531
+
+[node name="pesgansta" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource("1_j7ygs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-20, -3)
+shape = SubResource("CapsuleShape2D_13kq1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ay6en")
+
+[node name="braso" type="Sprite2D" parent="."]
+position = Vector2(-51, -20)
+texture = ExtResource("2_13kq1")
+
+[node name="range" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+shape = SubResource("CircleShape2D_j7ygs")
+
+[connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
