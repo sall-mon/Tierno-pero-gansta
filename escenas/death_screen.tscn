@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://hndvxtjnfe3b"]
+
+[ext_resource type="Script" uid="uid://bj2wd0mpxte2" path="res://scripts/title_screen.gd" id="1_tgk5v"]
+[ext_resource type="Texture2D" uid="uid://braiey6axaqd1" path="res://imagenes/fondoblanco.png" id="2_mq2ha"]
+[ext_resource type="Texture2D" uid="uid://b4ajhh01byv62" path="res://imagenes/deathmessage.png" id="3_tgk5v"]
+[ext_resource type="Texture2D" uid="uid://den2jl8gsb34t" path="res://imagenes/botonvolverajugar.png" id="4_mq2ha"]
+[ext_resource type="Texture2D" uid="uid://da8i8bkf22ru0" path="res://imagenes/botonirse.png" id="5_idvfv"]
+
+[node name="death_screen" type="Node2D"]
+script = ExtResource("1_tgk5v")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_mq2ha")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="titulo" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_tgk5v")
+
+[node name="jugar" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_mq2ha")
+
+[node name="botonjugar" type="Button" parent="MarginContainer/VBoxContainer/jugar"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 14.0
+offset_right = 960.0
+offset_bottom = 181.0
+flat = true
+
+[node name="salir" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_idvfv")
+
+[node name="botonsalir" type="Button" parent="MarginContainer/VBoxContainer/salir"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 16.0
+offset_right = 885.0
+offset_bottom = 186.0
+flat = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/jugar/botonjugar" to="." method="_on_botonjugar_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/salir/botonsalir" to="." method="_on_botonsalir_pressed"]

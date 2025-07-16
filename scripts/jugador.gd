@@ -15,6 +15,8 @@ func eplosion():
 	$AnimationPlayer.play("eplosion")
 	$Camara/reproductorMusica.stop()
 	alive = false
+	await get_tree().create_timer(2).timeout
+	get_tree().change_scene_to_file("res://escenas/death_screen.tscn")
 
 func _physics_process(delta):
 	if alive:
