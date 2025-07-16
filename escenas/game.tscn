@@ -9,27 +9,27 @@
 [ext_resource type="PackedScene" uid="uid://4fvfforkc1q" path="res://escenas/pesgansta.tscn" id="6_sa5h6"]
 [ext_resource type="PackedScene" uid="uid://dvpmyvywyi5a8" path="res://escenas/pesganstaverde.tscn" id="7_3lvuv"]
 
-[node name="Game" type="Node2D"]
+[node name="Juego" type="Node2D"]
 
 [node name="Jugador" parent="." instance=ExtResource("1_80nbo")]
 z_index = 1
 position = Vector2(2, 20)
 
-[node name="Camera2D" type="Camera2D" parent="Jugador"]
+[node name="Camara" type="Camera2D" parent="Jugador"]
 position = Vector2(-8, -5)
 
-[node name="Sprite2D" type="Sprite2D" parent="Jugador/Camera2D"]
+[node name="fondo" type="Sprite2D" parent="Jugador/Camara"]
 light_mask = 2
 visibility_layer = 2
 z_index = -1
 texture = ExtResource("2_feb5d")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Jugador/Camera2D"]
+[node name="reproductorMusica" type="AudioStreamPlayer2D" parent="Jugador/Camara"]
 stream = ExtResource("3_7jktm")
 volume_db = -9.225
 autoplay = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Jugador/Camera2D"]
+[node name="mostradorDePuntaje" type="RichTextLabel" parent="Jugador/Camara"]
 offset_left = 235.0
 offset_top = 281.0
 offset_right = 577.0
@@ -38,15 +38,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 27
 text = "PUNTOS GANSTA:"
 
-[node name="puntos" type="RichTextLabel" parent="Jugador/Camera2D/RichTextLabel"]
-layout_mode = 0
-offset_left = 229.0
-offset_top = -5.0
-offset_right = 336.0
-offset_bottom = 42.0
-theme_override_font_sizes/normal_font_size = 27
-
-[node name="puntos2" type="Label" parent="Jugador/Camera2D/RichTextLabel"]
+[node name="puntos" type="Label" parent="Jugador/Camara/mostradorDePuntaje"]
 layout_mode = 0
 offset_left = 233.0
 offset_top = -1.0
@@ -1367,6 +1359,9 @@ position = Vector2(-3658, -1705)
 [node name="pess436" parent="peses" instance=ExtResource("2_e2o6t")]
 position = Vector2(-3838, -1697)
 
+[node name="pess437" parent="peses" instance=ExtResource("2_e2o6t")]
+position = Vector2(6522, -1635)
+
 [node name="pesesbomba" type="Node" parent="."]
 
 [node name="pesbomba" parent="pesesbomba" instance=ExtResource("4_fc0e3")]
@@ -1430,6 +1425,3 @@ position = Vector2(109, -1244)
 
 [node name="pesganstaverde4" parent="pesesgansta" instance=ExtResource("7_3lvuv")]
 position = Vector2(1870, -1429)
-
-[node name="pess100" parent="." instance=ExtResource("2_e2o6t")]
-position = Vector2(6522, -1635)

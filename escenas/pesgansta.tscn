@@ -32,5 +32,9 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
 shape = SubResource("CircleShape2D_j7ygs")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+
 [connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

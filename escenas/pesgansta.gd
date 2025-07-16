@@ -1,7 +1,8 @@
 extends StaticBody2D
 
 @onready var bala = load("escenas/bala.tscn")
-var inRange = true
+var inRange = false
+var target
 
 func _ready():
 	pass
@@ -16,15 +17,23 @@ func fire(angle: float):
 	instance.spawnRotation = global_rotation
 	add_child(instance)
 
-
 func _on_range_body_entered(body: Node2D) -> void:
-	inRange = true
-	while inRange:
-		await get_tree().create_timer(0.6).timeout
-		var angle = (body.global_position - global_position).angle() + ((85.0/180.0)*PI)
-		fire(angle)
-
+	startShooting()
+	target = body
 
 func _on_range_body_exited(body: Node2D) -> void:
-	inRange = false
+	stopShooting()
 	pass # Replace with function body.
+
+func startShooting():
+	$Timer.start()
+	pass
+
+func stopShooting():
+	$Timer.stop()
+	pass
+	
+func _on_timer_timeout() -> void:
+	var angle = (target.global_position - (global_position + Vector2(-120, -70))).angle() + ((90.0/180.0)*PI)
+	fire(angle)
+	

@@ -13,7 +13,7 @@ func get_input():
 
 func eplosion():
 	$AnimationPlayer.play("eplosion")
-	$Camera2D/AudioStreamPlayer2D.stop()
+	$Camara/reproductorMusica.stop()
 	alive = false
 
 func _physics_process(delta):
