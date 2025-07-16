@@ -1,13 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://dplcrw32oad2p"]
 
-[ext_resource type="Script" uid="uid://bj2wd0mpxte2" path="res://scripts/title_screen.gd" id="1_f0cb6"]
 [ext_resource type="Texture2D" uid="uid://braiey6axaqd1" path="res://imagenes/fondoblanco.png" id="1_mdb8c"]
 [ext_resource type="Texture2D" uid="uid://jelxtc8uq2rr" path="res://imagenes/titulo.png" id="1_sw848"]
 [ext_resource type="Texture2D" uid="uid://rmgomshp72g4" path="res://imagenes/botonjugar.png" id="2_p6cby"]
+[ext_resource type="Script" uid="uid://bg16mkptokw65" path="res://scripts/button.gd" id="4_f0cb6"]
 [ext_resource type="Texture2D" uid="uid://ctrcl6rgbbwsx" path="res://imagenes/botonsalir.png" id="5_v2n76"]
 
 [node name="Title Screen" type="Node2D"]
-script = ExtResource("1_f0cb6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -40,25 +39,17 @@ texture = ExtResource("1_sw848")
 layout_mode = 2
 texture = ExtResource("2_p6cby")
 
-[node name="botonjugar" type="Button" parent="MarginContainer/VBoxContainer/jugar"]
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/jugar"]
 layout_mode = 0
 offset_left = 301.0
 offset_top = 14.0
 offset_right = 704.0
 offset_bottom = 181.0
 flat = true
+script = ExtResource("4_f0cb6")
 
 [node name="salir" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_v2n76")
 
-[node name="botonsalir" type="Button" parent="MarginContainer/VBoxContainer/salir"]
-layout_mode = 0
-offset_left = 336.0
-offset_top = 35.0
-offset_right = 623.0
-offset_bottom = 174.0
-flat = true
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/jugar/botonjugar" to="." method="_on_botonjugar_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/salir/botonsalir" to="." method="_on_botonsalir_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/jugar/Button" to="MarginContainer/VBoxContainer/jugar/Button" method="_on_pressed"]
