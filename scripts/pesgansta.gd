@@ -12,6 +12,7 @@ func _physics_process(delta: float) -> void:
 
 func fire(angle: float):
 	var instance = bala.instantiate()
+	instance.speed = 900
 	instance.dir = angle
 	instance.spawnPosition = global_position + Vector2(-120, -70)
 	instance.spawnRotation = global_rotation

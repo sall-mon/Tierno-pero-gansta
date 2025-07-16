@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b83785i8xqw1l" path="res://imagenes/fondu.png" id="2_feb5d"]
 [ext_resource type="AudioStream" uid="uid://c23srsyx0kj63" path="res://sonido/musik.mp3" id="3_7jktm"]
 [ext_resource type="PackedScene" uid="uid://u48em5oopg1h" path="res://escenas/pesbomba.tscn" id="4_fc0e3"]
-[ext_resource type="Script" uid="uid://dih0p310xdcvp" path="res://escenas/puntos.gd" id="4_fd5rt"]
+[ext_resource type="Script" uid="uid://dih0p310xdcvp" path="res://scripts/puntos.gd" id="4_fd5rt"]
 [ext_resource type="PackedScene" uid="uid://4fvfforkc1q" path="res://escenas/pesgansta.tscn" id="6_sa5h6"]
 [ext_resource type="PackedScene" uid="uid://dvpmyvywyi5a8" path="res://escenas/pesganstaverde.tscn" id="7_3lvuv"]
 

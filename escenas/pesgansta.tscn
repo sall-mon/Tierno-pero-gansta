@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://4fvfforkc1q"]
 
 [ext_resource type="Texture2D" uid="uid://dqr1tndkwvvxc" path="res://imagenes/pesgansta.png" id="1_ay6en"]
-[ext_resource type="Script" uid="uid://c6srj0oofkenm" path="res://escenas/pesgansta.gd" id="1_j7ygs"]
+[ext_resource type="Script" uid="uid://c6srj0oofkenm" path="res://scripts/pesgansta.gd" id="1_j7ygs"]
 [ext_resource type="Texture2D" uid="uid://c5q6rf1tao83h" path="res://imagenes/vrasogansta.png" id="2_13kq1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_13kq1"]

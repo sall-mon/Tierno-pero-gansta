@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvpmyvywyi5a8"]
 
-[ext_resource type="Script" uid="uid://c0daugal3cerl" path="res://escenas/pesganstaverde.gd" id="1_w3h6l"]
+[ext_resource type="Script" uid="uid://c0daugal3cerl" path="res://scripts/pesganstaverde.gd" id="1_w3h6l"]
 [ext_resource type="Texture2D" uid="uid://b80kxv4f6585i" path="res://imagenes/peganstaverde.png" id="2_w3h6l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_13kq1"]
