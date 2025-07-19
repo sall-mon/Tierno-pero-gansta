@@ -23,8 +23,9 @@ func fire(angle: float):
 
 
 func _on_range_body_entered(body: Node2D) -> void:
-	startShooting()
 	target = body
+	startShooting()
+	
 
 
 func _on_range_body_exited(body: Node2D) -> void:
@@ -44,4 +45,5 @@ func stopShooting():
 
 func _on_timer_timeout() -> void:
 	var angle = (target.global_position - (global_position + Vector2(-120, -70))).angle() + ((90.0/180.0)*PI)
-	fire(angle)
+	if target.isAlive():
+		fire(angle)

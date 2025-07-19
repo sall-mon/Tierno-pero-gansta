@@ -10,11 +10,12 @@ func _ready():
 			if not dataFromFile[0] == "":
 				data.append_array(dataFromFile)
 	else:
-		print("error")
+		print("error abriendo el archivo")
 	print(data)
 	dataSorter(data)
 	print("after sort\n" + str(data))
 	for i in range(0, data.size(), 2):
+		$TablaPosiciones.text += str((i/2)+1) + "-\n"
 		$TablaPuntajeNombres.text += data[i] + "\n"
 		$TablaPuntajePuntos.text += data[i+1] + "\n"
 

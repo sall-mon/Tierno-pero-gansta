@@ -27,6 +27,16 @@ theme_override_font_sizes/normal_font_size = 52
 text = "Nombre"
 fit_content = true
 
+[node name="TablaPosiciones" type="RichTextLabel" parent="."]
+offset_left = -482.0
+offset_top = -182.0
+offset_right = -250.0
+offset_bottom = 100.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+scroll_active = false
+horizontal_alignment = 2
+
 [node name="TablaPuntajeNombres" type="RichTextLabel" parent="."]
 offset_left = -242.0
 offset_top = -182.0

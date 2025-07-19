@@ -268,9 +268,9 @@ texture = ExtResource("2_feb5d")
 
 [node name="TiempoRestante" type="Label" parent="Jugador/Camara"]
 offset_left = -50.0
-offset_top = -324.0
+offset_top = -775.996
 offset_right = 62.0
-offset_bottom = -278.0
+offset_bottom = -729.996
 pivot_offset = Vector2(56, 23)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 29
@@ -283,10 +283,10 @@ volume_db = -9.225
 autoplay = true
 
 [node name="mostradorDePuntaje" type="RichTextLabel" parent="Jugador/Camara"]
-offset_left = 233.0
-offset_top = 282.0
-offset_right = 575.0
-offset_bottom = 324.0
+offset_left = 843.995
+offset_top = 733.996
+offset_right = 1185.99
+offset_bottom = 775.996
 pivot_offset = Vector2(171, 21)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 27

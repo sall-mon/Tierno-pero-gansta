@@ -20,6 +20,8 @@ func eplosion():
 	await get_tree().create_timer(2).timeout
 	get_tree().change_scene_to_file("res://escenas/death_screen.tscn")
 
+func isAlive():
+	return self.alive
 
 func _physics_process(delta):
 	if alive:
