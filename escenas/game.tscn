@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bbxyxe2d23koj"]
+[gd_scene load_steps=14 format=3 uid="uid://bbxyxe2d23koj"]
 
 [ext_resource type="PackedScene" uid="uid://bum364w6ykk8k" path="res://escenas/jugador.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://byeg1xh4ya6c6" path="res://scripts/game.gd" id="1_t1yb8"]
 [ext_resource type="PackedScene" uid="uid://bqxwypd8yab8r" path="res://escenas/pess.tscn" id="2_e2o6t"]
 [ext_resource type="Texture2D" uid="uid://b83785i8xqw1l" path="res://imagenes/fondu.png" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://dnbuybfgqs28u" path="res://escenas/pause_menu.tscn" id="2_t1yb8"]
 [ext_resource type="AudioStream" uid="uid://c23srsyx0kj63" path="res://sonido/musik.mp3" id="3_7jktm"]
 [ext_resource type="PackedScene" uid="uid://u48em5oopg1h" path="res://escenas/pesbomba.tscn" id="4_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://4fvfforkc1q" path="res://escenas/pesgansta.tscn" id="6_sa5h6"]
@@ -268,9 +269,9 @@ texture = ExtResource("2_feb5d")
 
 [node name="TiempoRestante" type="Label" parent="Jugador/Camara"]
 offset_left = -50.0
-offset_top = -775.996
+offset_top = -324.0
 offset_right = 62.0
-offset_bottom = -729.996
+offset_bottom = -278.0
 pivot_offset = Vector2(56, 23)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 29
@@ -283,10 +284,10 @@ volume_db = -9.225
 autoplay = true
 
 [node name="mostradorDePuntaje" type="RichTextLabel" parent="Jugador/Camara"]
-offset_left = 843.995
-offset_top = 733.996
-offset_right = 1185.99
-offset_bottom = 775.996
+offset_left = 233.0
+offset_top = 282.0
+offset_right = 575.0
+offset_bottom = 324.0
 pivot_offset = Vector2(171, 21)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 27
@@ -310,6 +311,10 @@ autostart = true
 [node name="MarginContainer" type="MarginContainer" parent="Jugador/Camara"]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="pause_menu" parent="Jugador/Camara" instance=ExtResource("2_t1yb8")]
+process_mode = 2
+visible = false
 
 [node name="peses" type="Node" parent="."]
 
@@ -1689,3 +1694,5 @@ position = Vector2(109, -1244)
 position = Vector2(1870, -1429)
 
 [connection signal="timeout" from="Jugador/Camara/TiempoDeJuego" to="." method="_on_tiempo_de_juego_timeout"]
+[connection signal="boton_jugar" from="Jugador/Camara/pause_menu" to="." method="_on_pause_menu_boton_jugar"]
+[connection signal="boton_salir" from="Jugador/Camara/pause_menu" to="." method="_on_pause_menu_boton_salir"]

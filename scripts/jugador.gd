@@ -7,7 +7,7 @@ var alive = true
 func get_input():
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = input_direction * speed
-	if Input.is_key_pressed(KEY_SHIFT):
+	if Input.is_key_pressed(KEY_SHIFT) and not Input.is_key_pressed(KEY_SPACE):
 		velocity *= 1.5
 	if Input.is_key_pressed(KEY_SPACE):
 		velocity /= 2
