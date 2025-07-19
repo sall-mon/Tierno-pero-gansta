@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm41yxfbe6dw8"
-path="res://.godot/imported/botonsalir.png-33a907b53092cb9a68a0f43aa2ff34e3.ctex"
+uid="uid://cwlwcolc1nqlo"
+path="res://.godot/imported/btnverpuntitos.png-973dd29f4ea917e8872c285decadfa29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagenes/botonsalir.png"
-dest_files=["res://.godot/imported/botonsalir.png-33a907b53092cb9a68a0f43aa2ff34e3.ctex"]
+source_file="res://imagenes/btnverpuntitos.png"
+dest_files=["res://.godot/imported/btnverpuntitos.png-973dd29f4ea917e8872c285decadfa29.ctex"]
 
 [params]
 

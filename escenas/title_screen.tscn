@@ -1,46 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://dplcrw32oad2p"]
+[gd_scene load_steps=7 format=3 uid="uid://dplcrw32oad2p"]
 
 [ext_resource type="Script" uid="uid://bj2wd0mpxte2" path="res://scripts/title_screen.gd" id="1_f0cb6"]
 [ext_resource type="Texture2D" uid="uid://braiey6axaqd1" path="res://imagenes/fondoblanco.png" id="1_mdb8c"]
 [ext_resource type="Texture2D" uid="uid://jelxtc8uq2rr" path="res://imagenes/titulo.png" id="1_sw848"]
 [ext_resource type="Texture2D" uid="uid://rmgomshp72g4" path="res://imagenes/botonjugar.png" id="2_p6cby"]
-[ext_resource type="Texture2D" uid="uid://ctrcl6rgbbwsx" path="res://imagenes/botonsalir.png" id="5_v2n76"]
+[ext_resource type="Texture2D" uid="uid://ctrcl6rgbbwsx" path="res://imagenes/botonsalirvictoria.png" id="5_v2n76"]
+[ext_resource type="Texture2D" uid="uid://cwlwcolc1nqlo" path="res://imagenes/btnverpuntitos.png" id="6_f0cb6"]
 
 [node name="Title Screen" type="Node2D"]
 script = ExtResource("1_f0cb6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 0
-theme_override_constants/margin_left = 120
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 120
-theme_override_constants/margin_bottom = 80
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -576.0
+offset_top = -335.0
+offset_right = 576.0
+offset_bottom = 335.0
 texture = ExtResource("1_mdb8c")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="titulo" type="TextureRect" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
+[node name="titulo" type="TextureRect" parent="."]
+offset_left = -548.0
+offset_top = -294.0
+offset_right = 452.0
+offset_bottom = -142.0
+scale = Vector2(1.1, 1.1)
 texture = ExtResource("1_sw848")
 
-[node name="jugar" type="TextureRect" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
+[node name="jugar" type="TextureRect" parent="."]
+offset_left = -431.0
+offset_top = -135.0
+offset_right = 569.0
+offset_bottom = 65.0
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("2_p6cby")
+stretch_mode = 3
+metadata/_edit_group_ = true
 
-[node name="botonjugar" type="Button" parent="MarginContainer/VBoxContainer/jugar"]
+[node name="botonjugar" type="Button" parent="jugar"]
 layout_mode = 0
 offset_left = 301.0
 offset_top = 14.0
@@ -48,11 +45,16 @@ offset_right = 704.0
 offset_bottom = 181.0
 flat = true
 
-[node name="salir" type="TextureRect" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
+[node name="salir" type="TextureRect" parent="."]
+offset_left = -437.0
+offset_top = 12.0
+offset_right = 563.0
+offset_bottom = 212.0
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("5_v2n76")
+stretch_mode = 3
 
-[node name="botonsalir" type="Button" parent="MarginContainer/VBoxContainer/salir"]
+[node name="botonsalir" type="Button" parent="salir"]
 layout_mode = 0
 offset_left = 336.0
 offset_top = 35.0
@@ -60,5 +62,22 @@ offset_right = 623.0
 offset_bottom = 174.0
 flat = true
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/jugar/botonjugar" to="." method="_on_botonjugar_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/salir/botonsalir" to="." method="_on_botonsalir_pressed"]
+[node name="VerPuntitos" type="TextureRect" parent="."]
+offset_left = -476.0
+offset_top = 176.0
+offset_right = 524.0
+offset_bottom = 282.0
+texture = ExtResource("6_f0cb6")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="BotonVerPuntitos" type="Button" parent="VerPuntitos"]
+layout_mode = 0
+offset_left = 245.0
+offset_right = 780.0
+offset_bottom = 99.0
+flat = true
+
+[connection signal="pressed" from="jugar/botonjugar" to="." method="_on_botonjugar_pressed"]
+[connection signal="pressed" from="salir/botonsalir" to="." method="_on_botonsalir_pressed"]
+[connection signal="pressed" from="VerPuntitos/BotonVerPuntitos" to="." method="_on_boton_ver_puntitos_pressed"]

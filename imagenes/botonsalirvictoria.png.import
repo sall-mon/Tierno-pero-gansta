@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm41yxfbe6dw8"
-path="res://.godot/imported/botonsalir.png-33a907b53092cb9a68a0f43aa2ff34e3.ctex"
+uid="uid://ctrcl6rgbbwsx"
+path="res://.godot/imported/botonsalirvictoria.png-64c3b55d8e9eeb3214072fd33316f3eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagenes/botonsalir.png"
-dest_files=["res://.godot/imported/botonsalir.png-33a907b53092cb9a68a0f43aa2ff34e3.ctex"]
+source_file="res://imagenes/botonsalirvictoria.png"
+dest_files=["res://.godot/imported/botonsalirvictoria.png-64c3b55d8e9eeb3214072fd33316f3eb.ctex"]
 
 [params]
 
