@@ -42,4 +42,5 @@ func stopShooting():
 
 func _on_timer_timeout() -> void:
 	var angle = (target.global_position - (global_position + Vector2(130, -30))).angle() + ((90.0/180.0)*PI)
-	fire(angle)
+	if target.isAlive():
+		fire(angle)
